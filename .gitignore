@@ -1,8 +1,8 @@
-# jekyll
+# Jekyll
 
 .DS_Store
 
-#jekyll stuff
+# Jekyll stuff
 _site
 .sass-cache
 .jekyll-metadata

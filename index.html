@@ -1,0 +1,30 @@
+---
+layout : default
+page_title : Hello little potatoes
+---
+    <h3> My work </h3>
+
+
+
+    {% assign sortedAllPost = (site.posts| sort : 'post.date' | reverse %}
+      {% for item in sortedAllPost limit:3 %}
+        {% if forloop.first%}<ul class="">{%endif%}
+        <li>
+            <h1><a href="{{item.url}}">{{ item.title }}</a></h1>
+        </li>
+
+      {% if forloop.last%}</ul>{%endif%}
+    {% endfor%}
+
+
+    <h3> my BlogPosts </h3>
+
+    {% assign sortedAllWork = (site.portfolio| sort : 'page.project_year' | reverse %}
+      {% for item in sortedAllWork %}
+        {% if forloop.first%}<ul>{%endif%}
+        <li>
+            <h1><a href="{{item.url}}">{{ item.title }}</a></h1>
+        </li>
+
+      {% if forloop.last%}</ul>{%endif%}
+    {% endfor%}

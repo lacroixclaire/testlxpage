@@ -1,0 +1,10 @@
+<hr>
+
+<footer>
+{% for item in site.data.socialmedia %}
+  {% if forloop.first %} <ul> {% endif %}
+    <li>{{item.social_icon}}<a href="{{item.social_url}}">{{item.social_label}}</a></li>
+  {% if forloop.last %} </ul> {% endif %}
+{% endfor%}
+
+</footer>

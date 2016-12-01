@@ -1,0 +1,17 @@
+<nav>
+{% assign navData = site.data.nav %}
+
+{% for item in navData %}
+
+  {% if page.currentNav | downcase == item.navLabel | downcase %}
+    {% assign currentClass = "mainnav__item--current" %}
+  {% else %}
+    {% assign currentClass = "" %}
+  {% endif %}
+
+  {% if forloop.first %}<ul class="mainnav">{% endif %}
+    <li class="mainnav__item{{ currentClass }}"><a href="{{ item.navLink }}">{{ item.navLabel }}</a></li>
+  {% if forloop.last %}</ul>{% endif %}
+
+{% endfor %}
+</nav>
